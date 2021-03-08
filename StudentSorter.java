@@ -72,7 +72,7 @@ public class StudentSorter {
 			String currentName = numericalized[x].split(",")[0]; //stores the current name in a String
 			String currentMark = numericalized[x].split(",")[1]; //stores the current score in a String
 			int y = x - 1; //defines y each loop as one less than x
-				//shifts the elements that are numerically larger than the currentMark one to the right
+				//shifts the elements that are numerically smaller (descending) than the currentMark one to the right
 			while ((y > -1) && Integer.parseInt(numericalized[y].split(",")[1]) < Integer.parseInt(currentMark)) {
 				numericalized[y + 1] = numericalized[y]; //
 				y--; 
