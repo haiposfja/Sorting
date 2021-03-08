@@ -47,10 +47,10 @@ public class StudentSorter {
 			String currentName = alphabetized[x].split(",")[0]; //stores the current name in a string
 			String currentMark = alphabetized[x].split(",")[1]; //stores the current mark in a string
 			int y = x - 1; //defines y each loop as one less than x
-				//while y >=0 and the name in the current loop counter - 1 is alphabetically greater than the current name
+				//shifts the elements that are alphabetically larger than currentName one to the right
 			while ((y > -1) && alphabetized[y].split(",")[0].compareTo(currentName) > 0) {
 				alphabetized[y + 1] = alphabetized[y]; 
-				y--; //subtracts index of y, checking where to insert
+				y--; 
 			}
 			alphabetized[y + 1] = currentName + "," + currentMark; //inserts
 		}
@@ -63,7 +63,7 @@ public class StudentSorter {
 			// local array to prevent persistent data destruction
 		String[] numericalized = new String[TBD];
 
-			// copies both student array and score array to the lcoal array
+			// copies both student array and score array to the local array
 		for (int i = 0; i < TBD; i++) {
 			numericalized[i] = students[i] + "," + scores[i];
 		}
@@ -72,10 +72,10 @@ public class StudentSorter {
 			String currentName = numericalized[x].split(",")[0]; //stores the current name in a String
 			String currentMark = numericalized[x].split(",")[1]; //stores the current score in a String
 			int y = x - 1; //defines y each loop as one less than x
-				//while y >=0 and the score in the current loop counter is greater than the current score
+				//shifts the elements that are numerically larger than the currentMark one to the right
 			while ((y > -1) && Integer.parseInt(numericalized[y].split(",")[1]) < Integer.parseInt(currentMark)) {
 				numericalized[y + 1] = numericalized[y]; //
-				y--; //subtracts index of y, checking where to insert
+				y--; 
 			}
 			numericalized[y + 1] = currentName + "," + currentMark; //inserts
 		}
