@@ -35,7 +35,7 @@ public class StudentSorter {
 	//sorts alphabetically: A-Z
 	public String[] sortAlphabetically() {
 		
-			// local array to prevent persistent data destruction
+			// local array to prevent changing the original array
 		String[] alphabetized = new String[TBD];
 		
 			// copies both student array and score array to the local array
@@ -60,7 +60,7 @@ public class StudentSorter {
 	//sorts numerically: descending order
 	public String[] sortNumerically() {
 		
-			// local array to prevent persistent data destruction
+			// local array to prevent changing the original array
 		String[] numericalized = new String[TBD];
 
 			// copies both student array and score array to the local array
