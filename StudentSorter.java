@@ -36,7 +36,7 @@ public class StudentSorter {
 	public String[] sortAlphabetically() {
 		
 			// local array to prevent changing the original array
-		String[] alphabetized = new String[TBD];
+		String[] alphabetized = new String[LENGTH];
 		
 			// copies both student array and score array to the local array
 		for (int i = 0; i < LENGTH; i++) {
@@ -61,7 +61,7 @@ public class StudentSorter {
 	public String[] sortNumerically() {
 		
 			// local array to prevent changing the original array
-		String[] numericalized = new String[TBD];
+		String[] numericalized = new String[LENGTH];
 
 			// copies both student array and score array to the local array
 		for (int i = 0; i < LENGTH; i++) {
@@ -99,7 +99,8 @@ public class StudentSorter {
 		System.out.println("Sorted Alphabetically: A-Z: \n");
 		System.out.println("Score|Student");
 		for (String str : sortAlphabetically()) {
-			System.out.print(str.split(",")[1] + "     ");
+	
+		System.out.print(str.split(",")[1] + "     ");
 			System.out.println(str.split(",")[0]);
 		}
 		
