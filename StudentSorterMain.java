@@ -8,7 +8,9 @@ import java.io.IOException;
 
 public class StudentSorterMain {
 	public static void main (String [] args) throws IOException {
-		StudentSorter test = new StudentSorter();
-		test.displayData();
+		StudentSorter class1 = new StudentSorter();
+		class1.displayOriginalData();
+		class1.displayAlphabetizedData();
+		class1.displayNumericalData();
 	}
 }
