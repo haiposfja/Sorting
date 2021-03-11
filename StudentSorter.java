@@ -2,7 +2,7 @@
  * Ms. Krasteva
  * 3/9/2021
  * This program will store and sort the data from A-71.txt
- * Print Order: Marks --> Name to keep equal distance between strings without the use of stringbuilder
+ * Print Order: Name --> Marks, 5 spaces for 3 letter names, 4 for 4 letter.... to create equivalent spacing.
  */
 
 import java.io.File;
@@ -13,7 +13,7 @@ public class StudentSorter {
 	private final static int LENGTH = 35;
 	private String[] students = new String[LENGTH];
 	private String[] scores = new String[LENGTH];
-
+	private String[] spaces = { "", " ", "  ", "   ", "    ", "     "}; // string array for equal spacing
 	public StudentSorter() throws IOException {
 		File studentsNScores = new File("A-71.txt");
 		Scanner reader = new Scanner(studentsNScores);
@@ -91,10 +91,11 @@ public class StudentSorter {
 		// prints the original data from the file
 		System.out.println("\n\n"); //space in case order varies
 		System.out.println("Original Data from the File: \n");
-		System.out.println("Score|Student");
+		System.out.println("Student|Score");
 		for (int i = 0; i < LENGTH; i++) {
-			System.out.print(scores[i] + "     ");
-			System.out.println(students[i]);
+			int spaceCount = 8 - students[i].length(); // 5 space print algo
+			System.out.print(students[i] + spaces[spaceCount]);
+			System.out.println(scores[i]);
 		}
 
 	}
@@ -104,10 +105,11 @@ public class StudentSorter {
 		// prints the data in an alphabetized format
 		System.out.println("\n\n"); //space in case order varies
 		System.out.println("Sorted Alphabetically: A-Z: \n");
-		System.out.println("Score|Student");
+		System.out.println("Student|Score");
 		for (String str : sortAlphabetically()) {
-			System.out.print(str.split(",")[1] + "     ");
-			System.out.println(str.split(",")[0]);
+			int spaceCount = 8 - str.split(",")[0].length(); // 5 space print algo
+			System.out.print(str.split(",")[0] + spaces[spaceCount]);
+			System.out.println(str.split(",")[1]);
 		}
 	}
 
@@ -116,10 +118,11 @@ public class StudentSorter {
 		// prints the data in descending order (marks)
 		System.out.println("\n\n"); //space in case order varies
 		System.out.println("Sorted Numerically: Highest Average to Lowest Average: \n");
-		System.out.println("Score|Student");
+		System.out.println("Student|Score");
 		for (String str : sortNumerically()) {
-			System.out.print(str.split(",")[1] + "     ");
-			System.out.println(str.split(",")[0]);
+			int spaceCount = 8 - str.split(",")[0].length(); // 5 space print algo
+			System.out.print(str.split(",")[0] + spaces[spaceCount]);
+			System.out.println(str.split(",")[1]);
 		}
 	}
 }
